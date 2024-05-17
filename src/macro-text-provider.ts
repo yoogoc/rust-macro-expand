@@ -132,6 +132,7 @@ export class MacroTextProvider implements vscode.TextDocumentContentProvider {
         doc.cargoCommand,
         {
           cwd: doc.cargoPath,
+          maxBuffer: 1024 * 10000 // 10000KB
         },
         function (error, standardOutput, standardError) {
           if (error) {
